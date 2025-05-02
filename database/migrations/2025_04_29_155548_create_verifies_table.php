@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('hod_name');
             $table->string('dean_name');
             $table->string('file_name');
+            $table->string('status');
             $table->timestamps();
         });
     }
