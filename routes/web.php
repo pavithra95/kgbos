@@ -36,7 +36,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('courses', App\Http\Controllers\CourseController::class)->names('courses');
-Route::resource('verify', App\Http\Controllers\VerifyController::class)->names('courses');
+Route::resource('verify', App\Http\Controllers\VerifyController::class)->names('verify');
+Route::resource('departments', App\Http\Controllers\DepartmentController::class)->names('departments');
 
 Route::get('/course-categories', function() {
     return \App\Models\Course::select('id', 'course', 'internal', 'external')

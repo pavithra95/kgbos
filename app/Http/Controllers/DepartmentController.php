@@ -12,7 +12,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $items = Department::all();
+        return view('departments.index')->with(compact('items'));
     }
 
     /**
@@ -20,7 +21,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('departments.create');
     }
 
     /**
@@ -28,7 +29,11 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Department();
+        $item->name = $request->name;
+        $item->save();
+        return redirect('/departments');
+
     }
 
     /**
@@ -42,17 +47,22 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Department $department)
+    public function edit($id)
     {
-        //
+        $item = Department::find($id);
+        return view('departments.edit')->with(compact('item'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Department $department)
+    public function update(Request $request, $id)
     {
-        //
+        $item = Department::find($id);
+        $item->name = $request->name;
+        $item->save();
+
+        return redirect('/departments');
     }
 
     /**
