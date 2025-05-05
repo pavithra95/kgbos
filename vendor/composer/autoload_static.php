@@ -360,8 +360,8 @@ class ComposerStaticInitb9016d35acafce651ac1a4fd641a6a56
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -405,8 +405,8 @@ class ComposerStaticInitb9016d35acafce651ac1a4fd641a6a56
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -1804,6 +1804,7 @@ class ComposerStaticInitb9016d35acafce651ac1a4fd641a6a56
         'Illuminate\\Cache\\DynamoDbLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/DynamoDbLock.php',
         'Illuminate\\Cache\\DynamoDbStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/DynamoDbStore.php',
         'Illuminate\\Cache\\Events\\CacheEvent' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheEvent.php',
+        'Illuminate\\Cache\\Events\\CacheFlushFailed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushFailed.php',
         'Illuminate\\Cache\\Events\\CacheFlushed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushed.php',
         'Illuminate\\Cache\\Events\\CacheFlushing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushing.php',
         'Illuminate\\Cache\\Events\\CacheHit' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheHit.php',
