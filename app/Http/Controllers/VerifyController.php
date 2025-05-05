@@ -23,7 +23,8 @@ class VerifyController extends Controller
     public function create()
     {
         $departments = Department::all();
-        return view('verify.create')->with(compact('departments'));
+        $dean = User::where('role','dean')->get();
+        return view('verify.create')->with(compact('departments','dean'));
     }
 
     /**

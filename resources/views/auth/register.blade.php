@@ -83,7 +83,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">Department</label>
 
                             <div class="col-md-6" >
-                                <select name="department" id="" required class="form-control">
+                                <select name="department" id="" class="form-control">
                                     <option value=""></option>
                                     @foreach($departments as $department)
                                     <option value="{{$department->id}}">{{$department->name}}</option>

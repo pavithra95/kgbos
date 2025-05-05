@@ -94,7 +94,13 @@
       <input type="hidden" name="hod_id" id="hod_id" />
 
       <label for="dean_name">Dean Name</label>
-      <input type="text" id="dean_name" name="dean_name" required />
+      <select name="dean_name" id="" required>
+        <option value=""></option>
+        @foreach($dean as $d)
+        <option value="{{$d->id}}">{{$d->name}}</option>
+        @endforeach
+      </select>
+      <!-- <input type="text" id="dean_name" name="dean_name" required /> -->
 
       <label for="file">Upload File</label>
       <input type="file" id="file" name="file" required />

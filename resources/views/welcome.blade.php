@@ -121,7 +121,7 @@
 
   <!-- Header -->
   <header class="hero-header">
-    <img src="./Images/logo/KGM_KGCAS_HEADER_LOGO.png" alt="Brand Logo">
+    <img src="{{asset('images/logo/KGM_KGCAS_HEADER_LOGO.png')}}" alt="Brand Logo">
   </header>
 
   <!-- Main Content -->
