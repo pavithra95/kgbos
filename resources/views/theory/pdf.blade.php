@@ -125,7 +125,10 @@
             <td style="border: 1px solid black; text-align: center; padding: 8px;" colspan="3">
             <span style="font-weight: bold;">K1</span> - Remember; 
             <span style="font-weight: bold;">K2</span> - Understand; 
-            <span style="font-weight: bold;">K3</span> - Apply
+            <span style="font-weight: bold;">K3</span> - Apply;
+            <span style="font-weight: bold;">K4</span> - Analyze;
+            <span style="font-weight: bold;">K5</span> - Evalute;
+            <span style="font-weight: bold;">K6</span> - Create
             </td>
         </tr>
         </tbody>

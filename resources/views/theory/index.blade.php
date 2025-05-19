@@ -238,7 +238,10 @@
             <td style="border: 1px solid black; text-align: center; padding: 8px;" colspan="3">
             <span style="font-weight: bold;">K1</span> - Remember; 
             <span style="font-weight: bold;">K2</span> - Understand; 
-            <span style="font-weight: bold;">K3</span> - Apply
+            <span style="font-weight: bold;">K3</span> - Apply;
+            <span style="font-weight: bold;">K4</span> - Analyze;
+            <span style="font-weight: bold;">K5</span> - Evalute;
+            <span style="font-weight: bold;">K6</span> - Create
             </td>
         </tr>
         </tbody>
@@ -577,11 +580,11 @@
   </thead>
   <tbody>
     <tr>
-      <td style="border: 1px solid black; vertical-align: top;" contentEditable=true></td>
+      <td style="border: 1px solid black; vertical-align: center;" contentEditable=true></td>
       <td style="border: 1px solid black; text-align: justify; padding: 5px;" contentEditable=true>
         
       </td>
-      <td style="border: 1px solid black; vertical-align: top;" class="hours-cell" contentEditable=true></td>
+      <td style="border: 1px solid black; vertical-align: center;" class="hours-cell" contentEditable=true></td>
       <td style="border: none">
         <button onclick="deleteRow(this)">X</button>
       </td>
@@ -599,8 +602,8 @@
 
 <h3>Reference</h3>
 
-<div id="table-container">
-    <table id="textBooksTable" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+<div id="table-container" >
+    <table id="textBooksTable" style="width: 100%;border-collapse: collapse; margin-bottom: 20px;table-layout:fixed;">
        
     
     <thead>
@@ -615,7 +618,7 @@
             <th style="border: none;"></th>
         </tr>
             <tr>
-                <th style="border: 1px solid black; padding: 8px; text-align: justify;">SNo</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: justify;">Sno</th>
                 <th style="border: 1px solid black; padding: 8px; text-align: justify;">Details</th>
                 <th style="border: none;"></th>
             </tr>
@@ -704,7 +707,7 @@ function duplicateTable() {
   var originalTable = container.querySelector('table');
   
   var newTable = document.createElement('table');
-  newTable.setAttribute('style', 'width: 100%; border-collapse: collapse; margin-bottom: 10px;');
+  newTable.setAttribute('style', 'width: 100%; border-collapse: collapse; margin-bottom: 10px; table-layout: fixed;');
 
   var theadClone = originalTable.querySelector('thead').cloneNode(true);
   newTable.appendChild(theadClone);

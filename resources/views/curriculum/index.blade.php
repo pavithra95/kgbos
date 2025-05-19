@@ -159,25 +159,7 @@
             const totalRow = tbody.querySelector('.totalRow');
             
             // Fetch course categories from server
-            let categories = [];
-            try {
-                const response = await fetch('/course-categories');
-                if (!response.ok) throw new Error('Network response was not ok');
-                categories = await response.json();
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-                alert('Failed to load course categories. Using default options.');
-                categories = [
-                    {id: 1, name: 'Core', internal_mark: 40, external_mark: 60},
-                    {id: 2, name: 'Elective', internal_mark: 30, external_mark: 70},
-                    {id: 3, name: 'Practical', internal_mark: 50, external_mark: 50}
-                ];
-            }
-
-            // Create dropdown options HTML
-            const categoryOptions = categories.map(cat => 
-                `<option value="${cat.id}" data-cia="${cat.internal_mark}" data-ese="${cat.external_mark}">${cat.name}</option>`
-            ).join('');
+           
 
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -187,12 +169,10 @@
                 <td style="border: 1px solid black; text-align: center;text-transform:uppercase;">
                     <input type="checkbox" class="cell-select"/><input type="text" name="courseCode[]">
                 </td>
-                <td style="border: 1px solid black; text-align: center;">
+                <td style="border: 1px solid black; text-align: center;text-transform:capitalize;">
                     <input type="checkbox" class="cell-select"/>
-                    <select name="courseCategory[]" class="course-category-select" style="width: 100%; padding: 5px;">
-                        <option value="">Select Category</option>
-                        ${categoryOptions}
-                    </select>
+                    <input type="text" name="courseCategory[]">
+                   
                 </td>
                 <td style="border: 1px solid black; text-align: center;text-transform:capitalize;">
                     <input type="checkbox" class="cell-select"/><input type="text" name="courseName[]">
@@ -223,23 +203,22 @@
             tbody.insertBefore(row, totalRow);
 
             // Add event listener for category selection
-            const categorySelect = row.querySelector('.course-category-select');
-            categorySelect.addEventListener('change', function() {
-                const selectedOption = this.options[this.selectedIndex];
-                const ciaValue = selectedOption.getAttribute('data-cia') || 0;
-                const eseValue = selectedOption.getAttribute('data-ese') || 0;
-                
-                // Set CIA and ESE values
-                row.querySelector('.cia-input').value = ciaValue;
-                row.querySelector('.ese-input').value = eseValue;
-                
-                // Calculate and set total
-                const total = parseInt(ciaValue) + parseInt(eseValue);
-                row.querySelector('.total-input').value = total;
-                
-                calculateTotals(table);
-              
-            });
+            // const categorySelect = row.querySelector('.course-category-select');
+            const ciaInput = row.querySelector('.cia-input');
+const eseInput = row.querySelector('.ese-input');
+const totalInput = row.querySelector('.total-input');
+
+// Function to update total
+function updateTotal() {
+  const cia = parseInt(ciaInput.value) || 0;
+  const ese = parseInt(eseInput.value) || 0;
+  totalInput.value = cia + ese;
+  calculateTotals(table); // Optional: your custom total calculation across all rows
+}
+
+// Add input event listeners to CIA and ESE
+ciaInput.addEventListener('input', updateTotal);
+eseInput.addEventListener('input', updateTotal);
 
             // Add input event listeners
             row.querySelectorAll('input[type="text"]').forEach(input => {
@@ -417,11 +396,7 @@ function unmergeSelectedCells() {
 }
 
 document.getElementById('TableForm').addEventListener('submit', function (e) {
-    if (!validateTotalHours()) {
-        e.preventDefault(); // ✅ stop submission and stay on the page
-        return;
-    }
-
+   
     prepareTable(); // only call if valid
 });
 

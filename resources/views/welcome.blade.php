@@ -158,10 +158,10 @@
     <i class="fas fa-file-upload"></i>
     Upload PDF
   </a>
-  <a href="/verify/create" class="card-item">
+  <!-- <a href="/verify/create" class="card-item">
     <i class="fas fa-file-upload"></i>
     Verify
-  </a>
+  </a> -->
 </div>
 
     </div>

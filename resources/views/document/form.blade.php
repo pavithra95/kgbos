@@ -852,11 +852,6 @@ function prepareTable() {
 }
 
 document.getElementById('Test').addEventListener('submit', function (e) {
-    if (!validateTotalHours()) {
-        e.preventDefault(); // ✅ stop submission and stay on the page
-        return;
-    }
-
     prepareTable(); // only call if valid
 });
 
@@ -1075,23 +1070,6 @@ function calculateTotals() {
     document.getElementById('tot_credits_tot').value = grandTotals.credits;
 }
 
-function validateTotalHours() {
-    const totalHrsInput = document.querySelector('#tot_hrs_tot');
-    const totalCreditsInput = document.querySelector('#tot_credits_tot');
-    const totalHR = parseFloat(totalHrsInput?.value) || 0;
-    const totalCR = parseFloat(totalCreditsInput?.value) || 0;
-    //  console.log(totalHR)
-    if (totalHR !== 180) {
-        alert("Please check Total Hrs. It should be exactly 180");
-        return false;
-    }
-    if(totalCR !== 140){
-        alert("Please check Total Credits. It should be exactly 140");
-        return false;
-    }
-
-    return true;
-}
 
 // window.onload = addRowConsolidate;
 
